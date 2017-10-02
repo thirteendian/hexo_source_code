@@ -6,6 +6,10 @@ mathjax: true
 ---
 # Markdown+网站配置手册
 
+这是markdown+hexo内置标签的备忘录
+
+<!-- more -->
+
 ## 1.VScode
 
 采用markdown编写程序进行及时预览

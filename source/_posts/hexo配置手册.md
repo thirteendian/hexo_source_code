@@ -10,7 +10,7 @@ _-Git跟Github是什么关系?_
 _-大概就是「魔兽争霸」与「对战平台」的关系吧。_
 
 _摘自知乎mzlogin_
-
+<!-- more -->
 本文<>内为此处占位内容提示
 ### git使用手册
 
@@ -122,6 +122,9 @@ _摘自知乎mzlogin_
 然后就是
 
     add ./rm --> commit --> status --> push  
+配置hexo
+
+        npm install hexo --save
 
 ### hexo持续集成
 
@@ -174,4 +177,5 @@ appveyor中的[加密页面](https://ci.appveyor.com/tools/encrypt)应该输入�
         GIT_USER_NAME  <username>
         STATIC_SITE_REPO <repo url>
         TARGET_BRANCH <master>
+
 
