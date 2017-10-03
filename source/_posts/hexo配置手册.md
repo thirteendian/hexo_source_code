@@ -177,5 +177,200 @@ appveyor中的[加密页面](https://ci.appveyor.com/tools/encrypt)应该输入�
         GIT_USER_NAME  <username>
         STATIC_SITE_REPO <repo url>
         TARGET_BRANCH <master>
+## hexo内置标签
 
+使用hexo时，相比原来的markdown，应首先使用内置标签，标签的开始终止类似latex的box模式
 
+### 引用
+
+    {% blockquote [author], [sourcename] [link-url] [link_title] %}
+    content
+    {% endblockquote %}
+    //注意这里的链接url和链接名link_title顺序正好和markdown反过来
+
+    居中引用
+    {% centerquote %}
+    content
+    {% endcenterquote %}
+    或简称
+    {% cq %}
+    {% endcq %}
+### 内容省略显示
+
+通常在主页上省略显示内容
+
+    <!-- more -->
+
+### 代码块
+
+    {% codeblock [title] [lang:language] [url] [link text] %}
+    code snippet
+    {% endcodeblock %}
+
+    也可以用反引号
+    ```[language][title][url][link text]```
+
+{% codeblock test lang:markdown http://test.com test_url %}
+this is a test code
+{% endcodeblock %}
+
+### 图片
+
+用标签可以插入指定大小的图片，如果不介意图片压缩的话
+一些图片网站直接提供图片链接(可以直接右键新标签页打开图片)，一些收费网站可以利用审查元素获得内链接地址，完全可以直接拉过来
+
+也可利用一些插件比如chrome的500px download可以直接将500px的图片拉下来
+
+自己上传图片图床可用[七牛云](https://portal.qiniu.com/)
+
+    {% img [class names] [url] [width] [height] [title text [alt text]] %}
+
+    突破容器宽度限制的图片，用于强调
+    {% fullimage /image-url, alt, title %}
+如
+{% fullimage https://drscdn.500px.org/photo/174588983/q%3D80_m%3D2000/v2?webp=true&sig=5cf9d11a986f5731051f23503c2de4105a46f5c8f9cdb17e8277b100041d4c92 %}
+
+### Bootstrap Callout样式
+
+{% note default %} Content (md partial supported) {% endnote %}
+
+    {% note class_name %} Content (md partial supported) {% endnote %}
+    其中class_name可替换成
+    无           浅灰
+    default     深灰
+    primary     蓝
+    success     绿
+    info        天蓝
+    warning     黄
+    danger      红
+
+### 字体
+
+_config.yml->fond
+
+### 背景
+
+_config.yml->canvas
+
+### 文章结束语
+
+主题下`\layout\_macro`中新建`passage-end-tag.swig`添加
+
+        <div>
+        {% if not is_index %}
+                <div style="text-align:center;color: #ccc;font-size:14px;">
+                -------------往者不可諫<i class="fa fa-paw"></i>來者猶可追-------------
+                </div>
+        {% endif %}
+        </div>
+并在`、layout\_macro\post.swig`中的`END POST BODY`中添加
+
+        <div>
+        {% if not is_index %}
+                {% include 'passage-end-tag.swig' %}
+        {% endif %}
+        </div>
+在主题配置文件添加
+
+        # 文章末尾添加“本文结束”标记
+        passage_end_tag:
+        enabled: true
+
+### 文章底部版权
+
+在`next/layout/_macro/`下修改`post-copyright.swig`为
+
+        {% if page.copyright %}
+        <ul class="post-copyright">
+        <li class="post-copyright-author">
+        <strong>本文标题:</strong>
+        <a href="{{ url_for(page.path) }}">{{ page.title }}</a>
+        </li>
+        <li class="post-copyright-author">
+        <strong>{{ __('post.copyright.author') + __('symbol.colon') }}</strong>
+        {{ config.author }}
+        </li>
+        <li class="post-copyright-author">
+        <strong>发布时间:</strong>
+        {{ page.date.format("YYYY年MM月DD日 - HH:MM") }}
+        </li>
+        <li class="post-copyright-author">
+        <strong>最后更新:</strong>
+        {{ page.updated.format("YYYY年MM月DD日 - HH:MM") }}
+        </li>
+        <li class="post-copyright-link">
+        <strong>{{ __('post.copyright.link') + __('symbol.colon') }}</strong>
+        <a href="{{ post.permalink }}" title="{{ post.title }}">{{ post.permalink }}</a>
+        </li>
+        <li class="post-copyright-license">
+        <strong>{{ __('post.copyright.license_title') + __('symbol.colon') }} </strong>
+        {{ __('post.copyright.license_content', theme.post_copyright.license_url, theme.post_copyright.license) }}
+        </li>
+        </ul>
+        {% endif %}
+
+### 修改md默认头部
+
+根目录`/scaffolds/post.md`修改为
+
+        ---
+        title: {{ title }}
+        date: {{ date }}
+        tags:                #标签
+        categories:      #分类
+        copyright: true #版权声明
+        permalink: 01  #文章链接，有默认值
+        top: 0              #置顶优先级
+        password:      #密码保护
+        ---
+### 博文置顶
+
+* 安装插件
+
+                npm install hexo-generator-index--save
+
+* 替换代码
+
+找到`node_modules/hexo-generator-index/lib/generator.js`修改为
+
+                'use strict';
+                var pagination = require('hexo-pagination');
+                module.exports = function(locals){
+                var config = this.config;
+                var posts = locals.posts;
+                posts.data = posts.data.sort(function(a, b) {
+                        if(a.top && b.top) { // 两篇文章top都有定义
+                        if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
+                        else return b.top - a.top; // 否则按照top值降序排
+                        }
+                        else if(a.top && !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
+                        return -1;
+                        }
+                        else if(!a.top && b.top) {
+                        return 1;
+                        }
+                        else return b.date - a.date; // 都没定义按照文章日期降序排
+                });
+                var paginationDir = config.pagination_dir || 'page';
+                return pagination('', posts, {
+                perPage: config.index_generator.per_page,
+                layout: ['index', 'archive'],
+                format: paginationDir + '/%d/',
+                data: {
+                __index: true
+                }
+                });
+                };
+
+* 在文章中设置top值即可，越大越靠前
+
+                ---
+                top: 100
+                ---
+
+### 增强底部标签
+
+修改`/themes/next/layout/_macro/post.swig`下的`rel=”tag”>#`
+将#换成
+
+                <i class="fa fa-tag"></i>

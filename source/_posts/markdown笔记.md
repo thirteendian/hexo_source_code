@@ -1,15 +1,15 @@
 ---
-title: markdown+网站配置手册
+title: markdown+hexo网站配置手册
 date: 2017-10-01 10:43:51
 tags: config
 mathjax: true
 ---
-# Markdown+网站配置手册
+# Markdown+hexo网站配置手册
 
 这是markdown+hexo内置标签的备忘录
 
 <!-- more -->
-
+[]内为格式+内容的提示,除了特殊格式其余命令不应加[]。
 ## 1.VScode
 
 采用markdown编写程序进行及时预览
@@ -161,11 +161,11 @@ mathjax: true
 
 应该用
 
-    (空格)
-    ```language
-    (内容)
+    [空行]
+    ```[language]
+    [内容]
     ```
-    (空格)
+    [空行]
 如果有`行内代码`用"`"括起
 ## 10.图片
 
@@ -232,3 +232,7 @@ $$
         \end{cases}
         $$
         [注意]这里$$是使公式居中
+
+
+
+
