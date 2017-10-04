@@ -12,6 +12,23 @@ _-大概就是「魔兽争霸」与「对战平台」的关系吧。_
 _摘自知乎mzlogin_
 <!-- more -->
 本文<>内为此处占位内容提示
+hexo环境变更需要优先安装以下插件
+                
+```bash
+                npm install hexo --save                         #安装hexo
+                npm install hexo-server --save                  #本地服务
+                npm install hexo-deployer-git --save            #推送插件
+                npm install hexo-generator-cname --save         #域名保持
+                npm install hexo-generator-index --save         #博文置顶
+                npm install hexo-encrypt --save                 #加密算法
+                npm uninstall hexo-renderer-marked --save       #更新渲染
+                npm install hexo-renderer-pandoc --save
+                npm install --save hexo-generator-index         #文章篇章
+                npm install --save hexo-generator-archive
+                npm install --save hexo-generator-tag
+                npm install hexo-generator-searchdb --save      #本地搜索
+                change inline.js                                #参照markdown笔记mathjax一节
+```
 ### git使用手册
 
 1. 在根目录下创建.git
@@ -380,7 +397,7 @@ _config.yml->canvas
 采用[hexo-encrypt](https://github.com/edolphin-ydf/hexo-encrypt)插件
 AES加密算法
 
-        npm install hexo-encrypt
+        npm install hexo-encrypt --save
 文章字头就可以直接
 
         ---
