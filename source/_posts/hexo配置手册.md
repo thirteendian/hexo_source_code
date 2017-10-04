@@ -374,3 +374,16 @@ _config.yml->canvas
 将#换成
 
                 <i class="fa fa-tag"></i>
+
+### 文章加密
+
+采用[hexo-encrypt](https://github.com/edolphin-ydf/hexo-encrypt)插件
+AES加密算法
+
+        npm install hexo-encrypt
+文章字头就可以直接
+
+        ---
+        encrypt: true
+        enc_pwd: 123456
+        ---
