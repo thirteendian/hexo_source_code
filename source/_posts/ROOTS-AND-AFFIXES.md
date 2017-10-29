@@ -20,11 +20,9 @@ enc_pwd:
 <!-- more -->
 ### 通用縮寫
 * 語法
->Morpheme詞素 Free Morpheme自由詞素 Bound Morpheme粘着詞素
-
->Root詞根 Stem詞幹 Word單詞 base詞基
-
->Affixs詞綴 Prefix前綴 Suffix後綴 Infix中綴 Inflextional Affix曲折詞綴 
+Morpheme詞素 Free Morpheme自由詞素 Bound Morpheme粘着詞素
+Root詞根 Stem詞幹 Word單詞 base詞基
+Affixs詞綴 Prefix前綴 Suffix後綴 Infix中綴 Inflextional Affix曲折詞綴 
 <table align="center">
 
 |Name|CHname|abb.|
@@ -37,7 +35,7 @@ enc_pwd:
 |Ablative|	夺|.AB
 |Vocative|	呼|.V
 |||
-|GENDER|名词词性|
+|GENDER|形容词性|
 |masculine|阳性|.MAS
 |feminine|阴性|.FEM
 |neuter|中性|.NEU
@@ -53,7 +51,10 @@ enc_pwd:
 |形容词性词缀||.xa
 |副词性词缀||.xad
 |介词性词缀||.xprep
-
+|||
+|拉丁语源||[L]
+|希腊语源||[G]
+|本族语源||[E]
 阴性出现后非中性变为阳性
 
 动词形容词名词均用小写简写
