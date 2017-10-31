@@ -240,5 +240,9 @@ enc_pwd:
     * concise [con+caedere] 簡明的 “切成小塊” -ly, -sion, -ness
     * decide [de+caedo] 決定 -er, -sion, -sive
     * excide [ex+caedere] 切除
-    * excise [ex+] 切除，消費稅
-    * incise [in+]
+    * excise [ex+caedo] 切除，消費稅
+    * incise [in+caedo] 刻 “切入”
+### $[German] slay$
+* slay -slew -slain =kill -ee, -er
+* slaughter 屠殺
+>flay 剝皮 flay a dog 剝狗皮 wawlay 潛伏 blay寒冷荒涼的 clay粘土 delay延誤 olay玉蘭油 play玩 relay轉播
