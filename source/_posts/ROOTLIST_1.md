@@ -12,6 +12,8 @@ enc_pwd:
 ---
 
 ## ROOTLIST 1
+&star;abjure-&star;avow
+<!-- more -->
 ---
 ### $[L] JUS(.n) JURO(.v)  JUSTUS(.a)$
 * $^{1}JUS[.N]JURIS[.G]   law,right,duty$法權責
@@ -246,3 +248,38 @@ enc_pwd:
 * slay -slew -slain =kill -ee, -er
 * slaughter 屠殺
 >flay 剝皮 flay a dog 剝狗皮 wawlay 潛伏 blay寒冷荒涼的 clay粘土 delay延誤 olay玉蘭油 play玩 relay轉播
+---
+### $[OE] ^{1}A- [.prep] on,in$
+
+a-+名词性词根=介词短语性形容词副词(注意多充当表语或后置定语)
+
+* &star;aloof [a+lof转舵] 远离，冷淡 “在舵上的”
+    >[syn] [G] apathy无情 [G]sympathy同情 [G]antipathy反感
+    >
+    >pathos 悲怅痛苦 pathy = passion激情
+    >
+    >[syn] [L] frigid [frigus冷]冷淡 fridge冰箱
+    >
+    >[syn] offish [off+ish] 冷淡的
+    >
+    >[syn] standoff [stand+off] 僵持,和局
+* aloft [a+loft阁楼] 在高处 “on loft阁楼”
+* afloat [a+float浮] 飘着，浮着 “on floating”
+* aweather [a+weather] 迎风，向风【航海】 “on乘着weather天气”
+* aground [a+ground] 搁浅的 run ~搁浅
+* afoot [a+foot] 徒步的 sth ~某事正在进行
+* astride [a+stride跨步] 两腿分开，跨在，跨越  ride a horse astride 跨骑马
+* abreast [a+breast乳房] 并排着 keep ~  of 与...并驾齐驱，跟上/了解最新情况
+* agape [a+gape裂开，打哈欠] 张开的
+* aslant [a+slant倾斜] 倾斜的,歪着的
+* alive [a+live] 活着的 “in life” stay ~活着, look ~快点,注意, skinned(剥皮) alive 严厉申诉
+* alight [a+light] 燃烧的,点着的,顿悟 set ~点燃
+* aflame [a+flame火焰] 燃烧着 A moth to a flame飞蛾扑火
+* akin [a+kin亲戚] 同族的
+* aback [a+back] 向后 be taken ~惊讶地
+* abloom [a+bloom花] 绽放
+* amiss [a+miss错过] 有毛病的
+* apace [a+pace步] 急速的
+* asunder [a+sunder切断] 化为碎片,分崩离析
+* awry [a+wry歪的] 错误的,扭曲的,歪歧
+* aweary [a+weary疲倦的] 疲倦的

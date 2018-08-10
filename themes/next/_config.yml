@@ -294,7 +294,7 @@ font:
   # Global font settings used on <body> element.
   global:
     external: true
-    family: Times New Roman
+    family:
     size: 20
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6).
